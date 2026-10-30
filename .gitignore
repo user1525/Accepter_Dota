@@ -1,0 +1,55 @@
+# Личные настройки, учётные данные и импортированные звуки
+config.json
+*.config
+.env
+.env.*
+*token*.json
+*secret*.json
+credentials*
+*.pem
+*.key
+user_sounds/
+resources/user/
+
+# Среды Python и кеши
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+*.egg-info/
+
+# Сборка и исполняемые файлы; accepter.spec нужен для сборки
+build/
+dist/
+*.exe
+*.dll
+*.zip
+
+# Журналы, временные данные и результаты проверок
+logs/
+*.log
+qa/
+plans/
+docs/superpowers/
+scripts/capture_baseline.py
+htmlcov/
+.coverage*
+coverage.xml
+*.tmp
+*.temp
+*.bak
+*~
+хлам/
+Хлам/
+
+# Настройки редакторов и служебные файлы ОС
+.idea/
+.vscode/
+Thumbs.db
+Desktop.ini
+.DS_Store
