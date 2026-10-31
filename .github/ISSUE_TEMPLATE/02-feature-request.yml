@@ -1,0 +1,33 @@
+name: Предложить улучшение
+description: Расскажите, чего не хватает и как это поможет пользоваться программой.
+title: "[Идея] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Предложите одну идею в одном обращении. Проверьте, нет ли уже похожего предложения.
+        Не публикуйте токены, пароли и личные данные.
+  - type: textarea
+    id: need
+    attributes:
+      label: Какую задачу хотите решить?
+      description: Расскажите о ситуации, в которой существующих возможностей не хватает.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Что предлагаете добавить или изменить?
+      description: Опишите, как это должно работать с точки зрения пользователя.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Как решаете эту задачу сейчас?
+      description: Если есть обходной способ или другие варианты, расскажите о них.
+  - type: textarea
+    id: examples
+    attributes:
+      label: Примеры и дополнительные материалы
+      description: Можно приложить набросок интерфейса или скриншот без личных данных.
