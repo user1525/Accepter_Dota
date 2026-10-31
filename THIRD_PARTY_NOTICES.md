@@ -1,10 +1,15 @@
-# Audio decoder notices
+# Уведомления о стороннем аудиодекодере
 
-Audio import uses miniaudio 1.71 (Python bindings, MIT license). License texts
-are included under licenses/miniaudio-*. The embedded miniaudio library and dr_libs
-components provide their own permissive license alternatives as recorded there.
-Project sources: https://github.com/irmen/pyminiaudio
-Underlying library: https://github.com/mackron/miniaudio
+Для импорта звука используется miniaudio 1.71 (привязки Python, лицензия MIT).
+Оригинал лицензии сохранён в `licenses/miniaudio-LICENSE`.
+Оригинальное уведомление проекта сохранено в `licenses/THIRD_PARTY_NOTICES.original.md`.
+Встроенная библиотека miniaudio и компоненты dr_libs предоставляют собственные
+варианты разрешительных лицензий, упомянутые в оригинальном уведомлении.
+Этот текст не назначает лицензию самому приложению.
 
-MP3 and WAV are decoded locally to short PCM WAV files; playback uses Qt's
-QSoundEffect. No system MP3 codec installation or external ffmpeg executable is used.
+Исходный проект: https://github.com/irmen/pyminiaudio
+Базовая библиотека: https://github.com/mackron/miniaudio
+
+MP3 и WAV декодируются локально в короткие PCM WAV; для воспроизведения
+используется QSoundEffect из Qt. Установка системного MP3-кодека или отдельного
+исполняемого файла ffmpeg не требуется.
