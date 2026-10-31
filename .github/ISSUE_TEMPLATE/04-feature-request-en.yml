@@ -1,0 +1,33 @@
+name: "[EN] Suggest an improvement"
+description: Tell us what is missing and how it would help you use the application.
+title: "[Idea] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Submit one idea per issue. Check whether a similar suggestion already exists.
+        Do not publish tokens, passwords, or personal information.
+  - type: textarea
+    id: need
+    attributes:
+      label: What problem would you like to solve?
+      description: Describe a situation where the existing features do not meet your needs.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like to add or change?
+      description: Describe how it should work from a user's perspective.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: How do you handle this now?
+      description: Describe any workarounds or alternatives you have considered.
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples and additional information
+      description: You may attach a UI sketch or screenshot with personal information removed.
