@@ -1,0 +1,23 @@
+# Зависимости для Dota 2 Accepter
+
+# GUI Framework
+PyQt5>=5.15.0
+
+# Image Processing
+opencv-python>=4.5.0
+numpy>=1.20.0
+
+# Automation
+pyautogui>=0.9.50
+
+# System
+pillow>=8.0.0
+keyboard>=0.13.5
+
+# Network (Telegram)
+requests>=2.28.0
+
+# Build
+pyinstaller>=6.0.0
+# Bundled MP3/WAV decoder, independent of Windows codecs
+miniaudio==1.71
