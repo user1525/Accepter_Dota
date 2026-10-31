@@ -4,8 +4,8 @@ from datetime import datetime
 from PyQt5.QtWidgets import (QApplication,QMainWindow,QWidget,QVBoxLayout,QHBoxLayout,
     QPushButton,QLabel,QGroupBox,QRadioButton,QTextEdit,QFileDialog,QMessageBox,
     QProgressBar,QCheckBox,QTabWidget,QListWidget,QScrollArea,QDoubleSpinBox)
-from PyQt5.QtCore import Qt,QTimer,QThread,pyqtSignal
-from PyQt5.QtGui import QIcon
+from PyQt5.QtCore import Qt,QTimer,QThread,pyqtSignal,QUrl
+from PyQt5.QtGui import QIcon,QDesktopServices
 import keyboard
 from core.accepter import DotaAccepter
 from core.config import Config
@@ -70,6 +70,11 @@ class MainWindow(QMainWindow):
         central=QWidget(); self.setCentralWidget(central)
         shell=QVBoxLayout(central); shell.setContentsMargins(24,20,24,16); shell.setSpacing(20)
         header=QHBoxLayout(); header.addWidget(BrandHeader(),1)
+        self.discussions_button = QPushButton('Обсуждения')
+        self.discussions_button.setProperty('role', 'link')
+        self.discussions_button.setToolTip('Вопросы, ошибки и идеи на GitHub')
+        self.discussions_button.clicked.connect(self.open_discussion)
+        header.addWidget(self.discussions_button)
         about=QPushButton('О программе'); about.setProperty('role','link'); about.clicked.connect(self.show_about); header.addWidget(about)
         shell.addLayout(header)
         body=QHBoxLayout(); body.setSpacing(20)
@@ -284,6 +289,12 @@ class MainWindow(QMainWindow):
 
     def update_log(self,message): self.log_text.append(message)
     def log(self,message): self.update_log(datetime.now().strftime('%H:%M:%S')+'  '+message)
+    def open_discussion(self):
+        url = 'https://github.com/user1525/Accepter_Dota/discussions/1'
+        if not QDesktopServices.openUrl(QUrl(url)):
+            QMessageBox.warning(self, 'Обсуждения',
+                                'Не удалось открыть браузер. Откройте ссылку вручную:\n' + url)
+
     def show_about(self): AboutDialog(self).exec_()
     def open_settings(self): self.open_settings_section(0)
     def load_settings(self): self.update_compact_template_status()
